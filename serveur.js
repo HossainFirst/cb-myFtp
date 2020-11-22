@@ -78,12 +78,12 @@ const server = net.createServer((socket) => {
         case 'RETR':
             let path = process.cwd()
             
-            if(fs.existsSync('C:/Users/ABELHAJ/Desktop/efrei/codeflix/onecode/season.03/projet'+parameter) && fs.existsSync(chemin+'\\'+parameter)){
+            if(fs.existsSync('C:/Users/ABELHAJ/Desktop/efrei/codeflix/onecode/season.03/projet'+parameter) && fs.existsSync(path+'\\'+parameter)){
               
-              fs.copyFileSync(chemin+'\\'+parameter, 'C:/Users/ABELHAJ/Desktop/efrei/codeflix/onecode/season.03/projet/files/'+parameter);
+              fs.copyFileSync(path+'\\'+parameter, 'C:/Users/ABELHAJ/Desktop/efrei/codeflix/onecode/season.03/projet/files/'+parameter);
               
             }else{
-              socket.write('Veuillez vérifier la source du fichier demandé');
+              socket.write('please retry there was an error');
             }
             
         case 'PWD':
